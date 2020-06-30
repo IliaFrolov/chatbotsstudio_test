@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const lessons = require('../controllers/lessons.controller.js');
+const lessons = require('../../controllers/lessons.controller.js');
 
 module.exports = (app) => {
   router.post('/', lessons.create);
