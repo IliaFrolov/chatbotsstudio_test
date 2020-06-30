@@ -6,12 +6,6 @@ module.exports = (mongoose) => {
     },
   );
 
-  StudentSchema.method('toJSON', () => {
-    const { __v, ...object } = this.toObject();
-    // object.id = _id;
-    return object;
-  });
-
   const Student = mongoose.model('student', StudentSchema);
   return Student;
 };

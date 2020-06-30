@@ -9,12 +9,6 @@ module.exports = (mongoose) => {
     },
   );
 
-  GroupSchema.method('toJSON', () => {
-    const { __v, ...object } = this.toObject();
-    // object.id = _id;
-    return object;
-  });
-
   const Group = mongoose.model('group', GroupSchema);
   return Group;
 };

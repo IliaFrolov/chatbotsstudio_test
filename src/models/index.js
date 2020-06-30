@@ -9,6 +9,7 @@ db.url = dbConfig.url;
 
 db.student = require('./student.model.js')(mongoose);
 db.group = require('./group.model.js')(mongoose);
+db.teacher = require('./teacher.model.js')(mongoose);
 db.lesson = require('./lesson.model.js')(mongoose);
 
 module.exports = db;

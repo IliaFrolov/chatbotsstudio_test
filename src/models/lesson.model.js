@@ -1,7 +1,7 @@
 module.exports = (mongoose) => {
   const LessonSchema = mongoose.Schema(
     {
-      theme: { type: String, unique: true, required: [true, 'name?'] },
+      topic: { type: String, required: [true, 'topic?'] },
       teachers: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'teacher',
@@ -14,22 +14,14 @@ module.exports = (mongoose) => {
       },
       classRoom: {
         type: String,
-        enum: ['', 'coat', 'mousse', 'mainTaste', 'additionalTaste', 'cake'],
         required: [true, 'classRoom?'],
       },
       time: {
-        start: String,
-        end: String,
-        required: [true, 'time?'],
+        start: { type: String, required: [true, 'starttime?'] },
+        end: { type: String, required: [true, 'endtime?'] },
       },
     },
   );
-
-  LessonSchema.method('toJSON', () => {
-    const { __v, ...object } = this.toObject();
-    // object.id = _id;
-    return object;
-  });
 
   const Lesson = mongoose.model('lesson', LessonSchema);
   return Lesson;
