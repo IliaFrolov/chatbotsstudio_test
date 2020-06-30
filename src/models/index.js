@@ -7,8 +7,8 @@ const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
 
-db.ingredient = require('./student.model.js')(mongoose);
-db.prepack = require('./group.model.js')(mongoose);
-db.decor = require('./lesson.model.js')(mongoose);
+db.student = require('./student.model.js')(mongoose);
+db.group = require('./group.model.js')(mongoose);
+db.lesson = require('./lesson.model.js')(mongoose);
 
 module.exports = db;
