@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "5efba926e3039f194428ff05"
+  },
+  "fullName": "Ilia Frolov",
+  "email": "frolov@ilia.dev"
+},{
+  "_id": {
+    "$oid": "5efba934e3039f194428ff06"
+  },
+  "fullName": "Illia Frolov",
+  "email": "frolov@ilia.dev"
+}]

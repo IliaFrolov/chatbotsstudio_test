@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "3d5c2e8f-9af3-4c38-80a9-6aeed01e9cb0",
+		"name": "school",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create lesson",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5adabaf9-bea7-486b-b348-0e603a000055",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"topic\": \"web-dev\",\r\n        \"teachers\": [\r\n            {\r\n                \"_id\": \"5efba9e0e3039f194428ff08\"\r\n            }\r\n        ],\r\n            \"group\": \r\n                {\r\n                    \"_id\": \"5efba97ee3039f194428ff07\"\r\n                },\r\n                \"classRoom\": \"123\",\r\n                \"time\":{\r\n                \t\"start\":\"10:00\",\r\n                \t\"end\":\"12:00\"\r\n                }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/lessons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"lessons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update lesson",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "79c34aeb-8fa6-4677-9ee3-6847129be41a",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"topic\": \"biology\",\r\n        \"teachers\": [\r\n            {\r\n                \"_id\": \"5eea33fad6c64c3e80ce10df\"\r\n            }\r\n        ],\r\n            \"group\": \r\n                {\r\n                    \"_id\": \"5eea33fad6c64c3e80ce10df\"\r\n                },\r\n                \"classRoom\": \"123\",\r\n                \"time\":{\r\n                \t\"start\":\"10:00\",\r\n                \t\"end\":\"12:00\"\r\n                }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/lessons/5efba80029a2d446d82613bc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"lessons",
+						"5efba80029a2d446d82613bc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete lesson",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/lessons/5efba78c29a2d446d82613ba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"lessons",
+						"5efba78c29a2d446d82613ba"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get lesson by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/lessons/5efba80029a2d446d82613bc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"lessons",
+						"5efba80029a2d446d82613bc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all lessons",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.aWxpYQ.YCACZJITYliZFbO9n1nBPhXZH-TbG_iyGhxoJJehyeM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/lessons/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"lessons",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

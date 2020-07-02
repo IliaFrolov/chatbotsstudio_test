@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "5efba97ee3039f194428ff07"
+  },
+  "name": "group1",
+  "students": [
+    {
+      "$oid": "5efba926e3039f194428ff05"
+    },
+    {
+      "$oid": "5efba934e3039f194428ff06"
+    }
+  ]
+}]

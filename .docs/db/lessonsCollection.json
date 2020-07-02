@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "5efbaa2b29a2d446d82613bf"
+  },
+  "teachers": [
+    {
+      "$oid": "5efba9e0e3039f194428ff08"
+    }
+  ],
+  "topic": "web-dev",
+  "group": {
+    "$oid": "5efba97ee3039f194428ff07"
+  },
+  "classRoom": "123",
+  "time": {
+    "start": "10:00",
+    "end": "12:00"
+  },
+  "__v": 0
+}]
