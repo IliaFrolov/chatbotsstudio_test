@@ -1,9 +1,9 @@
 const db = require('../models');
+const logger = require('../helpers/logger');
 
 const Lesson = db.lesson;
 
 exports.create = (req, res) => {
-  // console.log(req.body);
   const value = req.body.topic;
   if (!value) {
     res.status(400).send({ message: 'Content can not be empty!' });
@@ -23,6 +23,7 @@ exports.create = (req, res) => {
       res.send(data);
     })
     .catch((err) => {
+      logger.error(err.message);
       res.status(500).send({
         message:
           err.message || 'Some error occurred while creating the lesson.',
@@ -38,6 +39,7 @@ exports.findAll = (req, res) => {
       res.send(data);
     })
     .catch((err) => {
+      logger.error(err.message);
       res.status(500)
         .send({ message: err.message || 'Some error occurred while retrieving Lesson.' });
     });
@@ -53,6 +55,7 @@ exports.findOne = (req, res) => {
       if (!data) { res.status(404).send({ message: `Not found Lesson with id ${id}` }); } else res.send(data);
     })
     .catch((err) => {
+      logger.error(err.message);
       res
         .status(500)
         .send({ message: err.message || `Error retrieving Lesson with id=${id}` });
@@ -61,9 +64,7 @@ exports.findOne = (req, res) => {
 
 exports.update = (req, res) => {
   if (!req.body) {
-    res.status(400).send({
-      message: 'Data to update can not be empty!',
-    });
+    res.status(400).send({ message: 'Data to update can not be empty!' });
   }
   const { id } = req.params;
 
@@ -76,7 +77,7 @@ exports.update = (req, res) => {
       } else res.send({ message: 'Lesson was updated successfully.' });
     })
     .catch((err) => {
-      // console.log(err);
+      logger.error(err.message);
       res.status(500).send({
         message: err.message || `Error updating Lesson with id=${id}`,
       });
@@ -99,6 +100,7 @@ exports.delete = (req, res) => {
       }
     })
     .catch((err) => {
+      logger.error(err.message);
       res.status(500).send({
         message: err.message || `Could not delete Lesson with id=${id}`,
       });
